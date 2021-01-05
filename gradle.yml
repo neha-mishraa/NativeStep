@@ -2,8 +2,8 @@ resources:
   - name: gradle_repository_1
     type: GitRepo
     configuration:
-      gitProvider: raksha78_github
-      path: raksha78/project-examples
+      gitProvider: github_neha
+      path: neha-mishraa/project-examples
   - name: gradle_rak_1
     type: BuildInfo
     configuration:
