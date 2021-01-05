@@ -1,20 +1,20 @@
 resources:
-  - name: gradle_repository_1
+  - name: gradle_repository_2
     type: GitRepo
     configuration:
       gitProvider: github_neha
       path: neha-mishraa/project-examples
-  - name: gradle_rak_1
-    type: BuildInfo
-    configuration:
-      sourceArtifactory: art_v
+#   - name: gradle_rak_1
+#     type: BuildInfo
+#     configuration:
+#       sourceArtifactory: art_v
       
 pipelines:
-  - name: gradle_pipeline_1
+  - name: gradle_pipeline_2
     configuration:
       nodePool: win_2019
     steps:
-      - name: gradle_build_step_1
+      - name: gradle_build_step_2
         type: GradleBuild
         configuration:
           sourceLocation: gradle-examples/gradle-example-minimal
@@ -23,11 +23,11 @@ pipelines:
 #           autoPublishBuildInfo: true
           configFileName: gradle-art-config
           inputResources:
-            - name: gradle_repository_1
+            - name: gradle_repository_2
           integrations:
             - name: art_v
-          outputResources:
-            - name: gradle_rak_1
+#           outputResources:
+#             - name: gradle_rak_1
         execution:
           onStart:
             - javac -version
