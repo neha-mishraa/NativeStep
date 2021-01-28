@@ -3,7 +3,7 @@ pipelines:
     configuration:
       retentionPolicy:
         maxAgeDays: 2
-        minRuns: -5
+        minRuns: 5
     steps:
       - name: testStep
         type: Bash
