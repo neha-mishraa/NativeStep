@@ -7,10 +7,10 @@ resources:
         include: linux
       gitProvider: github_neha
       
-#   - name: go_rak
-#     type: BuildInfo
-#     configuration:
-#       sourceArtifactory: art_v
+  - name: go_rak
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: art_v
          
 
 pipelines:
@@ -29,5 +29,5 @@ pipelines:
             - name: art_v
           inputResources:
             - name: go_example
-#           outputResources:
-#             - name: go_rak
+          outputResources:
+            - name: go_rak
