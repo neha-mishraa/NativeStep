@@ -36,11 +36,18 @@ pipelines:
                 - name: art_v
         execution:
             onStart:
-                - buildDir=$(find_resource_variable $inputGitRepoResourceName resourcePath)
-                - echo "******** buildDir - $buildDir"
-                - pushd $buildDir
+#                 - buildDir=$(find_resource_variable $inputGitRepoResourceName resourcePath)
+#                 - echo "******** buildDir - $buildDir"
+#                 - pushd $buildDir
+#                 - go get -insecure
+#                 - popd
+                - $res_go_example_1_resourcePath
+                - Push-Location $res_go_example_1_resourcePath
                 - go get -insecure
-                - popd
+                - Pop-Location
+                - go version
+
+
 
       - name: publish_go_module
         type: GoPublishModule
