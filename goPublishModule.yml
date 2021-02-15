@@ -16,6 +16,32 @@ resources:
 pipelines:
   - name: go_build_pipeline
     steps:
+      - name: build_go
+        type: GoBuild
+        configuration:
+            environmentVariables:
+                JFROG_CLI_BUILD_NAME: go_example_build_publish
+            sourceLocation: .
+    #           resolverRepo: go_local
+            repository: go_local
+    #           noRegistry: true
+            outputLocation: /tmp/dist
+            outputFile: hello_output
+    #         goCommand: build -o /tmp/dist/hello_output
+            inputResources:
+                - name: go_example
+            integrations:
+                - name: art_v
+        execution:
+            onStart:
+                - buildDir=$(find_resource_variable $inputGitRepoResourceName resourcePath)
+                - echo "******** buildDir - $buildDir"
+                - pushd $buildDir
+                - go get -insecure
+                - popd
+                
+  - name: go_build_pipeline
+    steps:
       - name: publish_go_module
         type: GoPublishModule
         configuration:
