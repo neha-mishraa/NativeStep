@@ -53,10 +53,10 @@ pipelines:
             - name: build_go
           version: v0.0.2
           targetRepository: go_local
-#           autoPublishBuildInfo: true
+          autoPublishBuildInfo: true
           integrations:
             - name: art_v
           inputResources:
             - name: go_example
-#           outputResources:
-#             - name: go_info
+          outputResources:
+            - name: go_info
