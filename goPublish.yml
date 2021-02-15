@@ -43,7 +43,8 @@ pipelines:
             
                 
       - name: publish_go_binary
-        type: GoPublishBinary
+#         type: GoPublishBinary
+        type: GoPublishModule
         configuration:
           autoPublishBuildInfo: true
           inputSteps:
