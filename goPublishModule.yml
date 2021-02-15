@@ -11,6 +11,8 @@ resources:
     type: BuildInfo
     configuration:
       sourceArtifactory: art_v
+      buildName: go_info
+      buildNumber: 1
          
 
 pipelines:
