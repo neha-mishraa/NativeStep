@@ -45,17 +45,17 @@ pipelines:
       - name: publish_go_module
         type: GoPublishModule
         configuration:
-#           environmentVariables:
-#             JFROG_CLI_BUILD_NAME: go_example_module_publish
+          environmentVariables:
+            JFROG_CLI_BUILD_NAME: go_example_module_publish
 #           sourceLocation: .
           inputSteps:
             - name: build_go
-#           version: v0.0.0
+          version: v0.0.1
           targetRepository: go_local
           autoPublishBuildInfo: true
           integrations:
             - name: art_v
-#           inputResources:
-#             - name: go_example
+          inputResources:
+            - name: go_example
           outputResources:
             - name: go_rak
