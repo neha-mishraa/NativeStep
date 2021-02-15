@@ -4,7 +4,7 @@ resources:
     configuration:
       path: neha-mishraa/NativeStep
       branches:
-        include: linux
+        include: powershell
       gitProvider: github_neha
       
   - name: go_info
