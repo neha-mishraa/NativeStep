@@ -50,12 +50,12 @@ pipelines:
 #           sourceLocation: .
           inputSteps:
             - name: build_go
-          version: v0.0.0
+#           version: v0.0.0
           targetRepository: go_local
           autoPublishBuildInfo: true
           integrations:
             - name: art_v
-          inputResources:
-            - name: go_example
+#           inputResources:
+#             - name: go_example
           outputResources:
             - name: go_rak
