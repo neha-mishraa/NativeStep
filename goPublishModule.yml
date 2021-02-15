@@ -29,7 +29,7 @@ pipelines:
     #           noRegistry: true
             outputLocation: /tmp/dist
             outputFile: hello_output
-    #         goCommand: build -o /tmp/dist/hello_output
+            goCommand: build -o /tmp/dist/hello_output
             inputResources:
                 - name: go_example
             integrations:
@@ -45,8 +45,8 @@ pipelines:
       - name: publish_go_module
         type: GoPublishModule
         configuration:
-#           environmentVariables:
-#             JFROG_CLI_BUILD_NAME: go_example_module_publish
+          environmentVariables:
+            JFROG_CLI_BUILD_NAME: go_example_module_publish
 #             key: value
           sourceLocation: .
           inputSteps:
