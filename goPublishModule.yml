@@ -45,9 +45,9 @@ pipelines:
       - name: publish_go_module
         type: GoPublishModule
         configuration:
-          environmentVariables:
-            JFROG_CLI_BUILD_NAME: go_example_module_publish
-            key: value
+#           environmentVariables:
+#             JFROG_CLI_BUILD_NAME: go_example_module_publish
+#             key: value
 #           sourceLocation: .
           inputSteps:
             - name: build_go
