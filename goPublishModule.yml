@@ -7,7 +7,7 @@ resources:
         include: linux
       gitProvider: github_neha
       
-  - name: go_rak
+  - name: go_info
     type: BuildInfo
     configuration:
       sourceArtifactory: art_v
@@ -39,9 +39,7 @@ pipelines:
                 - pushd $buildDir
                 - go get -insecure
                 - popd
-                
-#   - name: go_build_pipeline
-#     steps:
+
       - name: publish_go_module
         type: GoPublishModule
         configuration:
@@ -50,7 +48,7 @@ pipelines:
 #           sourceLocation: .
           inputSteps:
             - name: build_go
-          version: v0.0.1
+          version: v0.0.2
           targetRepository: go_local
           autoPublishBuildInfo: true
           integrations:
@@ -58,4 +56,4 @@ pipelines:
           inputResources:
             - name: go_example
           outputResources:
-            - name: go_rak
+            - name: go_info
