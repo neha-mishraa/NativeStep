@@ -40,8 +40,8 @@ pipelines:
                 - go get -insecure
                 - popd
                 
-  - name: go_build_pipeline
-    steps:
+#   - name: go_build_pipeline
+#     steps:
       - name: publish_go_module
         type: GoPublishModule
         configuration:
