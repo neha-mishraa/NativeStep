@@ -20,7 +20,7 @@ pipelines:
         type: GoBuild
         configuration:
             environmentVariables:
-                JFROG_CLI_BUILD_NAME: go_example_build_publish
+                JFROG_CLI_BUILD_NAME: go_example_build
             sourceLocation: .
     #           resolverRepo: go_local
             repository: go_local
