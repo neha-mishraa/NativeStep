@@ -41,8 +41,8 @@ pipelines:
 #                 - pushd $buildDir
 #                 - go get -insecure
 #                 - popd
-                - $res_go_example_1_resourcePath
-                - Push-Location $res_go_example_1_resourcePath
+                - $res_go_example_resourcePath
+                - Push-Location $res_go_example_resourcePath
                 - go get -insecure
                 - Pop-Location
                 - go version
@@ -52,9 +52,9 @@ pipelines:
       - name: publish_go_module
         type: GoPublishModule
         configuration:
-          environmentVariables:
-            JFROG_CLI_BUILD_NAME: go_example_module_publish
-            JFROG_CLI_BUILD_NUMBER: ${run_number}
+#           environmentVariables:
+#             JFROG_CLI_BUILD_NAME: go_example_module_publish
+#             JFROG_CLI_BUILD_NUMBER: ${run_number}
           sourceLocation: .
           inputSteps:
             - name: build_go
