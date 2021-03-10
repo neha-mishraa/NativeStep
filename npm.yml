@@ -2,14 +2,14 @@ resources:
   - name: npm_repo
     type: GitRepo
     configuration:
-      path: raksha78/npmHelloWorld
-      gitProvider: raksha78_github
-  - name: npm_publish
-    type: BuildInfo
-    configuration:
-      sourceArtifactory: art_v
-      buildName: npm_publish
-      buildNumber: 1
+      path: neha-mishraa/npmHelloWorld
+      gitProvider: github_neha
+#   - name: npm_publish
+#     type: BuildInfo
+#     configuration:
+#       sourceArtifactory: art_v
+#       buildName: npm_publish
+#       buildNumber: 1
       
 pipelines:
   - name: npm
@@ -24,15 +24,15 @@ pipelines:
             - name: npm_repo
           integrations:
             - name: art_v
-      - name: publish_npm
-        type: NpmPublish
-        configuration:
-          autoPublishBuildInfo: true
-          repositoryName: npm-virtual
-          inputSteps:
-            - name: build_npm
-          integrations:
-            - name: art_v
-          outputResources:
-            - name: npm_publish
+#       - name: publish_npm
+#         type: NpmPublish
+#         configuration:
+#           autoPublishBuildInfo: true
+#           repositoryName: npm-virtual
+#           inputSteps:
+#             - name: build_npm
+#           integrations:
+#             - name: art_v
+#           outputResources:
+#             - name: npm_publish
     
