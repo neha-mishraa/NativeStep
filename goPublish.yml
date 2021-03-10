@@ -12,7 +12,7 @@ resources:
     configuration:
       sourceArtifactory: art_v
       buildName: go_rak
-      buildNumber: 1      
+      buildNumber: ${run_number}      
 
 pipelines:
   - name: go_build_pipeline
