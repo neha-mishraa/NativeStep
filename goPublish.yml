@@ -49,8 +49,8 @@ pipelines:
           autoPublishBuildInfo: true
           inputSteps:
             - name: build_go
-          #forceXrayScan: true
-#           failOnScan: false
+          forceXrayScan: true
+          failOnScan: true
           targetRepository: go_local
           integrations:
             - name: art_v
